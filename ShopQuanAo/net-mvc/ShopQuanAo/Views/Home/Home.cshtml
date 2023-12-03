@@ -1,0 +1,539 @@
+﻿@using ShopQuanAo.Models;
+
+@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    ViewBag.title = "Trang Chủ";
+}
+<div class="body-content outer-top-xs" id="top-banner-and-menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-3 sidebar">
+                <div style="padding: 22px;margin-bottom: 10px; background-color:#fff;" class="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs">
+                    <div class="hot-deal-wrapper">
+                        <div style="bottom: -22px; align-items: center;" class="timing-wrapper" id="countdown">
+                            <div id="title">
+                                <div class="box-wrapper">
+                                    <div class="date box">
+                                        <span class="key" id="days">0</span> <span class="value">Ngày</span>
+                                    </div>
+                                </div>
+                                <div class="box-wrapper">
+                                    <div class="hour box">
+                                        <span class="key" id="hours">0</span> <span class="value">Giờ</span>
+                                    </div>
+                                </div>
+                                <div class="box-wrapper">
+                                    <div class="minutes box">
+                                        <span class="key" id="minutes">0</span> <span class="value">Phút</span>
+                                    </div>
+                                </div>
+                                <div class="box-wrapper hidden-md">
+                                    <div class="seconds box">
+                                        <span class="key" id="seconds">0</span> <span class="value">Giây</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs">
+                    <h3 class="section-title">Ưu đãi lớn</h3>
+                    <div class="owl-carousel sidebar-carousel custom-carousel owl-theme outer-top-ss">
+                        @foreach (var productsale in ViewBag.sales)
+                        {
+                            <div class="item">
+                                <div class="products">
+                                    <div class="hot-deal-wrapper">
+                                        <div class="image"> <a href="~/Detail/Detail?MASANPHAM=@productsale.id_product"> <img style=" height:250px;" src="~/assets\images\products\@productsale.product.images" alt=""> </a></div>
+                                        <div class="sale-offer-tag">
+                                            <span>
+                                                @productsale.sale_off%<br>
+                                                off
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="product-info text-left m-t-20">
+                                        <h3 class="name"><a href="~/Detail/Detail?MASANPHAM=@productsale.id_product">@productsale.product.name_product</a></h3>
+                                        <div class="rating rateit-small"></div>
+                                        <div class="product-price"> <span class="price"> @productsale.price_sale VND</span> <span class="price-before-discount">@productsale.product.price_old VND</span> </div>
+                                    </div>
+                                    <div class="cart clearfix animate-effect">
+                                        <div class="action">
+                                            <div class="col-sm-7  btn-group" style="width: 223px; padding-left: 0px;">
+                                                <a class="btn btn-primary" href="~/CartShopping/AddToCart?MASANPHAM=@productsale.id_product&quantity=1&size=M"> <i class="fa fa-shopping-cart"></i> </a>
+                                                <button class="btn btn-primary cart-btn" type="button" ><a href="~/CartShopping/AddToCart?MASANPHAM=@productsale.id_product&quantity=1&size=M" style="color:white">Thêm vào giỏ hàng</a></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="sidebar-widget outer-bottom-small wow fadeInUp">
+                    <h3 class="section-title">Gợi ý cho bạn</h3>
+                    <div class="sidebar-widget-body outer-top-xs">
+                        <div class="owl-carousel sidebar-carousel special-offer custom-carousel owl-theme outer-top-xs">
+                            @foreach (var productGroup in ViewBag.productsspbki)
+                            {
+                                <div class="item">
+                                    <div class="products special-product">
+                                        @foreach (var product in productGroup)
+                                        {
+                                            <div class="product">
+                                                <div class="product-micro">
+                                                    <div style="margin-top: 10px;margin-bottom:10px;" class="row product-micro-row">
+                                                        <div class="col col-xs-5">
+                                                            <div class="product-image">
+                                                                <div class="image">
+                                                                    <a href="~/Detail/Detail?MASANPHAM=@product.id_product"> <img style="height:80px;" src="~/assets\images\products\@product.images" alt=""> </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col col-xs-7">
+                                                            <div class="product-info">
+                                                                <h3 class="name"><a href="~/Detail/Detail?MASANPHAM=@product.id_product">@product.name_product</a></h3>
+                                                                <div class="rating rateit-small"></div>
+                                                                <div class="product-price"> <span class="price">@product.price_new VND </span> </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-widget outer-bottom-small wow fadeInUp">
+                    <h3 class="section-title">Xu hướng</h3>
+                    <div class="sidebar-widget-body outer-top-xs">
+                        <div class="owl-carousel sidebar-carousel special-offer custom-carousel owl-theme outer-top-xs">
+                            @foreach (var productGroups in ViewBag.productsmax)
+                            {
+                                <div class="item">
+                                    <div class="products special-product">
+                                        @foreach (var products in productGroups)
+                                        {
+                                            <div class="product">
+                                                <div class="product-micro">
+                                                    <div style="margin-top: 10px;margin-bottom:10px;" class="row product-micro-row">
+                                                        <div class="col col-xs-5">
+                                                            <div class="product-image">
+                                                                <div class="image">
+                                                                    <a href="~/Detail/Detail?MASANPHAM=@products.id_product"> <img style="height:80px;" src="~/assets\images\products\@products.images" alt=""> </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col col-xs-7">
+                                                            <div class="product-info">
+                                                                <h3 class="name"><a href="~/Detail/Detail?MASANPHAM=@products.id_product">@products.name_product</a></h3>
+                                                                <div class="rating rateit-small"></div>
+                                                                <div class="product-price"> <span class="price">@products.price_new VND </span> </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-widget product-tag wow fadeInUp outer-top-vs">
+                    <h3 class="section-title">THƯƠNG HIỆU</h3>
+                    <div class="sidebar-widget-body outer-top-xs">
+                        <div class="tag-list">
+                            @foreach (var tagname in ViewBag.brands)
+                            {
+                                <a class="item" title="@tagname.brand_name" href="category.html">@tagname.brand_name</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9 homebanner-holder">
+                <div id="hero">
+                    <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
+                        <div class="item" style="background-image: url(/assets/images/sliders/03.jpg);">
+                            <div class="container-fluid">
+                                <div class="caption bg-color vertical-center text-left">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item" style="background-image: url(/assets/images/sliders/04.jpg);">
+                            <div class="container-fluid">
+                                <div class="caption bg-color vertical-center text-left">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item" style="background-image: url(/assets/images/sliders/05.png);">
+                            <div class="container-fluid">
+                                <div class="caption bg-color vertical-center text-left">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item" style="background-image: url(/assets/images/sliders/06.png);">
+                            <div class="container-fluid">
+                                <div class="caption bg-color vertical-center text-left">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-boxes wow fadeInUp">
+                    <div class="info-boxes-inner">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-4 col-lg-4">
+                                <div class="info-box">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <h4 class="info-box-heading green">Hoàn trả tiền</h4>
+                                        </div>
+                                    </div>
+                                    <h6 class="text">Đảm bảo hoàn tiền trong vòng 7 ngày</h6>
+                                </div>
+                            </div>
+                            <!-- .col -->
+
+                            <div class="hidden-md col-sm-4 col-lg-4">
+                                <div class="info-box">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <h4 class="info-box-heading green">Miễn phí ship</h4>
+                                        </div>
+                                    </div>
+                                    <h6 class="text">Miễn phí vận chuyển cho đơn hàng trên 400.000đ</h6>
+                                </div>
+                            </div>
+                            <!-- .col -->
+
+                            <div class="col-md-6 col-sm-4 col-lg-4">
+                                <div class="info-box">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <h4 class="info-box-heading green">Giảm giá đặc biệt</h4>
+                                        </div>
+                                    </div>
+                                    <h6 class="text">Giảm thêm 50.000đ cho tất cả các mặt hàng </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp">
+                    <div class="more-info-tab clearfix ">
+                        <h3 class="new-product-title pull-left">Sản phẩm</h3>
+                        <ul class="nav nav-tabs nav-tab-line pull-right" id="new-products-1">
+                            <li class="active"><a data-transition-type="backSlide" href="#all" data-toggle="tab">Tất cả</a></li>
+                            <li><a data-transition-type="backSlide" href="#Nam" data-toggle="tab">Nam</a></li>
+                            <li><a data-transition-type="backSlide" href="#Nu" data-toggle="tab">Nữ</a></li>
+                            <li><a data-transition-type="backSlide" href="#Tre" data-toggle="tab">Trẻ em</a></li>
+                            <li><a data-transition-type="backSlide" href="#Thethao" data-toggle="tab">Thể thao</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content outer-top-xs">
+                        <div class="tab-pane in active" id="all">
+                            <div class="product-slider">
+                                <div class="owl-carousel home-owl-carousel custom-carousel owl-theme" data-item="4">
+                                    @foreach (var allproduct in ViewBag.productalls)
+                                    {
+                                        <div class="item item-carousel">
+                                            <div class="products">
+                                                <div class="product">
+                                                    <div class="product-image" style="border: 1px solid #808080">
+                                                        <div class="image"> <a href="~/Detail/Detail?MASANPHAM=@allproduct.id_product"><img style="height:250px;" src="~/assets\images\products\@allproduct.images" alt=""></a> </div>
+                                                    </div>
+                                                    <div class="product-info text-left">
+                                                        <h3 class="name" style="height:20px"><a href="~/Detail/Detail?MASANPHAM=@allproduct.id_product">@allproduct.name_product</a></h3>
+                                                        <div class="rating rateit-small"></div>
+                                                        <div class="description"></div>
+                                                        <div class="product-price"> <span class="price"> @allproduct.price_new VND</span> <span class="price-before-discount">@allproduct.price_old VND</span> </div>
+                                                        <button class="buynow"><a href="#">BUY NOW</a></button>
+                                                    </div>
+
+                                                    <style>
+                                                        .buynow {
+                                                            background-color: #108bea;
+                                                            border: none;
+                                                            border-radius: 10px;
+                                                            width: 80px;
+                                                            height: 30px;
+                                                            margin-left: 50px;
+                                                        }
+
+                                                            .buynow:hover {
+                                                                cursor: pointer;
+                                                                background-color: #428bca;
+                                                            }
+
+                                                            .buynow a {
+                                                                color: white;
+                                                            }
+                                                    </style>
+                                                    <div class="cart clearfix animate-effect">
+                                                        <div class="action">
+                                                            <ul class="list-unstyled">
+                                                                <li class="add-cart-button btn-group">
+                                                                    <a data-toggle="tooltip" class="btn btn-primary icon" href="~/CartShopping/AddToCart?MASANPHAM=@allproduct.id_product&quantity=1&size=M" title="Add Cart"> <i class="fa fa-shopping-cart"></i> </a>
+                                                                    @*<button class="btn btn-primary cart-btn" type="button">Add to cart</button>*@
+                                                                </li>
+                                                                <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
+                                                                <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="Nam">
+                            <div class="product-slider">
+                                <div class="owl-carousel home-owl-carousel custom-carousel owl-theme">
+                                    @{
+                                        var productsMen = ViewBag.productalls;
+                                    }
+                                    @foreach (var item in productsMen)
+                                    {
+                                        if (item.subCategory.id_cate == 1)
+                                        {
+                                            <div class="item item-carousel">
+                                                <div class="products">
+                                                    <div class="product">
+                                                        <div class="product-image" style="border: 1px solid #808080">
+                                                            <div class="image"> <a href="~/Detail/Detail?MASANPHAM=@item.id_product"><img style="height:250px;" src="~/assets\images\products\@item.images" alt=""></a> </div>
+                                                        </div>
+                                                        <div class="product-info text-left">
+                                                            <h3 class="name" style="height:20px"><a href="~/Detail/Detail?MASANPHAM=@item.id_product">@item.name_product</a></h3>
+                                                            <div class="rating rateit-small"></div>
+                                                            <div class="description"></div>
+                                                            <div class="product-price"> <span class="price"> @item.price_new VND</span> <span class="price-before-discount">@item.price_new VND</span> </div>
+                                                            <button class="buynow"><a href="#">BUY NOW</a></button>
+                                                        </div>
+                                                        <div class="cart clearfix animate-effect">
+                                                            <div class="action">
+                                                                <ul class="list-unstyled">
+                                                                    <li class="add-cart-button btn-group">
+                                                                        <a data-toggle="tooltip" class="btn btn-primary icon" href="~/CartShopping/AddToCart?MASANPHAM=@item.id_product&quantity=1&size=M" title="Add Cart"> <i class="fa fa-shopping-cart"></i> </a>
+                                                                    </li>
+                                                                    <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
+                                                                    <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="Nu">
+                            <div class="product-slider">
+                                <div class="owl-carousel home-owl-carousel custom-carousel owl-theme">
+                                    @{
+                                        var productsWoman = ViewBag.productalls;
+                                    }
+                                    @foreach (var item in productsWoman)
+                                    {
+                                        if (item.subCategory.id_cate == 2)
+                                        {
+                                            <div class="item item-carousel">
+                                                <div class="products">
+                                                    <div class="product">
+                                                        <div class="product-image" style="border: 1px solid #808080">
+                                                            <div class="image"> <a href="~/Detail/Detail?MASANPHAM=@item.id_product"><img style="height:250px;" src="~/assets\images\products\@item.images" alt=""></a> </div>
+                                                        </div>
+                                                        <div class="product-info text-left">
+                                                            <h3 class="name" style="height:20px"><a href="~/Detail/Detail?MASANPHAM=@item.id_product">@item.name_product</a></h3>
+                                                            <div class="rating rateit-small"></div>
+                                                            <div class="description"></div>
+                                                            <div class="product-price"> <span class="price"> @item.price_new VND</span> <span class="price-before-discount">@item.price_new VND</span> </div>
+                                                            <button class="buynow"><a href="#">BUY NOW</a></button>
+                                                        </div>
+                                                        <div class="cart clearfix animate-effect">
+                                                            <div class="action">
+                                                                <ul class="list-unstyled">
+                                                                    <li class="add-cart-button btn-group">
+                                                                        <a data-toggle="tooltip" class="btn btn-primary icon" href="~/CartShopping/AddToCart?MASANPHAM=@item.id_product&quantity=1&size=M" title="Add Cart"> <i class="fa fa-shopping-cart"></i> </a>
+                                                                    </li>
+                                                                    <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
+                                                                    <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="Tre">
+                            <div class="product-slider">
+                                <div class="owl-carousel home-owl-carousel custom-carousel owl-theme">
+                                    @{
+                                        var productsBabies = ViewBag.productalls;
+                                    }
+                                    @foreach (var item in productsBabies)
+                                    {
+                                        if (item.subCategory.id_cate == 3)
+                                        {
+                                            <div class="item item-carousel">
+                                                <div class="products">
+                                                    <div class="product">
+                                                        <div class="product-image" style="border: 1px solid #808080">
+                                                            <div class="image"> <a href="~/Detail/Detail?MASANPHAM=@item.id_product"><img style="height:250px;" src="~/assets\images\products\@item.images" alt=""></a> </div>
+                                                        </div>
+                                                        <div class="product-info text-left">
+                                                            <h3 class="name" style="height:20px"><a href="~/Detail/Detail?MASANPHAM=@item.id_product">@item.name_product</a></h3>
+                                                            <div class="rating rateit-small"></div>
+                                                            <div class="description"></div>
+                                                            <div class="product-price"> <span class="price"> @item.price_new VND</span> <span class="price-before-discount">@item.price_new VND</span> </div>
+                                                            <button class="buynow"><a href="#">BUY NOW</a></button>
+                                                        </div>
+                                                        <div class="cart clearfix animate-effect">
+                                                            <div class="action">
+                                                                <ul class="list-unstyled">
+                                                                    <li class="add-cart-button btn-group">
+                                                                        <a data-toggle="tooltip" class="btn btn-primary icon" href="~/CartShopping/AddToCart?MASANPHAM=@item.id_product&quantity=1&size=M" title="Add Cart"> <i class="fa fa-shopping-cart"></i> </a>
+                                                                    </li>
+                                                                    <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
+                                                                    <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="Thethao">
+                            <div class="product-slider">
+                                <div class="owl-carousel home-owl-carousel custom-carousel owl-theme">
+                                    @{
+                                        var productsSport = ViewBag.productalls;
+                                    }
+                                    @foreach (var item in productsSport)
+                                    {
+                                        if (item.subCategory.id_cate == 4)
+                                        {
+                                            <div class="item item-carousel">
+                                                <div class="products">
+                                                    <div class="product">
+                                                        <div class="product-image" style="border: 1px solid #808080">
+                                                            <div class="image"> <a href="~/Detail/Detail?MASANPHAM=@item.id_product"><img style="height:250px;" src="~/assets\images\products\@item.images" alt=""></a> </div>
+                                                        </div>
+                                                        <div class="product-info text-left">
+                                                            <h3 class="name" style="height:20px"><a href="~/Detail/Detail?MASANPHAM=@item.id_product">@item.name_product</a></h3>
+                                                            <div class="rating rateit-small"></div>
+                                                            <div class="description"></div>
+                                                            <div class="product-price"> <span class="price"> @item.price_new VND</span> <span class="price-before-discount">@item.price_new VND</span> </div>
+                                                            <button class="buynow"><a href="#">BUY NOW</a></button>
+                                                        </div>
+                                                        <div class="cart clearfix animate-effect">
+                                                            <div class="action">
+                                                                <ul class="list-unstyled">
+                                                                    <li class="add-cart-button btn-group">
+                                                                        <a data-toggle="tooltip" class="btn btn-primary icon" href="~/CartShopping/AddToCart?MASANPHAM=@item.id_product&quantity=1&size=M" title="Add Cart"> <i class="fa fa-shopping-cart"></i> </a>
+                                                                    </li>
+                                                                    <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
+                                                                    <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wide-banners wow fadeInUp outer-bottom-xs">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="wide-banner cnt-strip">
+                                <div class="image"> <img class="img-responsive" src="~/assets\images\banners\home-banner.jpg" alt=""> </div>
+                                <div class="strip strip-text">
+                                    <div class="strip-inner">
+                                        <h2 class="text-right">
+                                            Thời trang nam mới<br>
+                                            <span class="shopping-needs">Tiết kiệm tới 40%</span>
+                                        </h2>
+                                    </div>
+                                </div>
+                                <div class="new-label">
+                                    <div class="text">MỚI</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="section featured-product wow fadeInUp">
+                    <h3 class="section-title">Sản phẩm nổi bật</h3>
+                    <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
+                        @foreach (var productgmax in ViewBag.productsgiamax)
+                        {
+                            <div class="item item-carousel">
+                                <div class="products">
+                                    <div class="product">
+                                        <div class="product-image" style="border: 1px solid #808080">
+                                            <div class="image">
+                                                <a href="~/Detail/Detail?MASANPHAM=@productgmax.id_product"><img style="height:250px;" src="~/assets/images/products/@productgmax.images" alt=""></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-info text-left">
+                                            <h3 class="name"><a href="~/Detail/Detail?MASANPHAM=@productgmax.id_product">@productgmax.name_product</a></h3>
+                                            <div class="rating rateit-small"></div>
+                                            <div class="description"></div>
+                                            <div class="product-price">
+                                                <span class="price">@productgmax.price_new VND</span>
+                                                <span class="price-before-discount">@productgmax.price_new VND</span>
+                                            </div>
+                                            <button class="buynow"><a href="#">BUY NOW</a></button>
+                                        </div>
+                                        <div class="cart clearfix animate-effect">
+                                            <div class="action">
+                                                <ul class="list-unstyled">
+                                                    <li class="add-cart-button btn-group">
+                                                        <a data-toggle="tooltip" class="btn btn-primary icon" href="~/CartShopping/AddToCart?MASANPHAM=@productgmax.id_product&quantity=1&size=M" title="Add Cart"> <i class="fa fa-shopping-cart"></i> </a>
+                                                    </li>
+                                                    <li class="lnk wishlist">
+                                                        <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Wishlist">
+                                                            <i class="icon fa fa-heart"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="lnk">
+                                                        <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Compare">
+                                                            <i class="fa fa-signal" aria-hidden="true"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

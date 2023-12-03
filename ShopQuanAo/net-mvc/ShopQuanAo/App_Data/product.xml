@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vanluong>
+  <Product id_product="sp02" product_name="Áo PoLo Nam Trắng viền Xanh" description="Áo Polo nam nữ unisex Dickies logo chữ camo, chất cotton 100% chính hãng" price="200000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="a1  " />
+  </Product>
+  <Product id_product="sp03" product_name="Áo PoLo Nam màu Xanh" description="Áo Polo nam nữ unisex Dickies logo chữ camo, chất cotton 100% chính hãng" price="200000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="a1  " />
+  </Product>
+  <Product id_product="sp04" product_name="Áo thun nam" description="Áo thun nam nữ unisex Dickies logo chữ camo, chất cotton 100% chính hãng" price="200000">
+    <Brand id_brand="3" brand_name="Louis Vuitton" />
+    <Category id_cate="a1  " />
+  </Product>
+  <Product id_product="sp05" product_name="Áo Sơ Mi Nam Tay Ngắn" description="Áo sơ mi nam nữ unisex Dickies logo chữ camo, chất cotton 100% chính hãng" price="200000">
+    <Brand id_brand="3" brand_name="Louis Vuitton" />
+    <Category id_cate="a1  " />
+  </Product>
+  <Product id_product="sp06" product_name="Quần Kaki Nam" description="Quần Kaki màu nâu ống suôn" price="200000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="q1  " />
+  </Product>
+  <Product id_product="sp07" product_name="Quần Dài Nam" description="Quần dài màu đen phong cách Hàn Quốc" price="200000">
+    <Brand id_brand="3" brand_name="Louis Vuitton" />
+    <Category id_cate="q1  " />
+  </Product>
+  <Product id_product="sp08" product_name="Quần Thun Nam" description="Quần Thun màu đen ống rộng" price="200000">
+    <Brand id_brand="4" brand_name="Céline" />
+    <Category id_cate="q1  " />
+  </Product>
+  <Product id_product="sp09" product_name="Quần Baggy Nam" description="Quần Baggy đen nâu ống suôn" price="200000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="q1  " />
+  </Product>
+  <Product id_product="sp10" product_name="Áo Khoác Dạ" description="Áo Khoác Đẹp" price="400000">
+    <Brand id_brand="4" brand_name="Céline" />
+    <Category id_cate="ak1 " />
+  </Product>
+  <Product id_product="sp11" product_name="Áo Khoác Gió" description="Áo Khoác Đẹp" price="400000">
+    <Brand id_brand="4" brand_name="Céline" />
+    <Category id_cate="ak1 " />
+  </Product>
+  <Product id_product="sp12" product_name="Áo Khoác Nỉ" description="Áo Khoác Đẹp" price="200000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="ak1 " />
+  </Product>
+  <Product id_product="sp13" product_name="Áo Khoác Phong Cách Hàn Quốc" description="Áo Khoác Đẹp" price="200000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="ak1 " />
+  </Product>
+  <Product id_product="sp14" product_name="Đồ Bộ Nam" description="Đồ Bộ Thể Thao/Đồ Bộ Nam Đẹp/Chất Mát/Nhiều Mầu Sắc/Kiểu Dáng Trẻ Trung/Sành Điệu NS00028" price="200000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="db1 " />
+  </Product>
+  <Product id_product="sp15" product_name="Đồ Bộ Nam" description="Đồ Bộ Thể Thao/Đồ Bộ Nam Đẹp/Chất Mát/Nhiều Mầu Sắc/Kiểu Dáng Trẻ Trung/Sành Điệu NS00028" price="200000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="db1 " />
+  </Product>
+  <Product id_product="sp16" product_name="Đồ Bộ Nam" description="Đồ Bộ Thể Thao/Đồ Bộ Nam Đẹp/Chất Mát/Nhiều Mầu Sắc/Kiểu Dáng Trẻ Trung/Sành Điệu NS00028" price="200000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="db1 " />
+  </Product>
+  <Product id_product="sp17" product_name="Đồ Bộ Nam" description="Đồ Bộ Thể Thao/Đồ Bộ Nam Đẹp/Chất Mát/Nhiều Mầu Sắc/Kiểu Dáng Trẻ Trung/Sành Điệu NS00028" price="200000">
+    <Brand id_brand="4" brand_name="Céline" />
+    <Category id_cate="db1 " />
+  </Product>
+  <Product id_product="sp18" product_name="Áo Thun Nữ Tay Dài" description="Áo Tay Dài Chất Liệu Cotton" price="400000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="a2  " />
+  </Product>
+  <Product id_product="sp19" product_name="Áo Cọc Tay Nữ" description="Áo Tay Cọc Chất Liệu Cotton" price="400000">
+    <Brand id_brand="4" brand_name="Céline" />
+    <Category id_cate="a2  " />
+  </Product>
+  <Product id_product="sp20" product_name="Áo Thun Nữ " description="Áo Thun Nữ Màu Đen" price="300000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="a2  " />
+  </Product>
+  <Product id_product="sp21" product_name="Áo 2 Dây Nữ" description="Áo 2 dây Chất Liệu Cotton" price="400000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="a2  " />
+  </Product>
+  <Product id_product="sp22" product_name="Quần Tây công sở ống rộng" description="Quần nữ công sở ống đứng quần tây nữ ống suông GLQ143" price="400000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="q2  " />
+  </Product>
+  <Product id_product="sp23" product_name="Quần Tây công sở" description="Quần nữ công sở ống đứng quần tây nữ ống suông GLQ143" price="400000">
+    <Brand id_brand="4" brand_name="Céline" />
+    <Category id_cate="q2  " />
+  </Product>
+  <Product id_product="sp24" product_name="Quần Jean Baggy" description="Quần nữ công sở ống đứng quần tây nữ ống suông GLQ143" price="400000">
+    <Brand id_brand="3" brand_name="Louis Vuitton" />
+    <Category id_cate="q2  " />
+  </Product>
+  <Product id_product="sp25" product_name="Quần Thun ống rộng" description="Quần nữ công sở ống đứng quần tây nữ ống suông GLQ143" price="100000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="q2  " />
+  </Product>
+  <Product id_product="sp26" product_name="Áo khoác phao" description="Áo khoác phao nữ dáng choàng dài siêu ấm sành điệu kiểu Hàn Quốc APM150 (Đen)" price="700000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="ak2 " />
+  </Product>
+  <Product id_product="sp27" product_name="Áo khoác nhung tăm" description="Áo khoác phao nữ dáng choàng dài siêu ấm sành điệu kiểu Hàn Quốc APM150 (Đen)" price="600000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="ak2 " />
+  </Product>
+  <Product id_product="sp28" product_name="Áo khoác Cổ lông trắng" description="Áo khoác phao nữ dáng choàng dài siêu ấm sành điệu kiểu Hàn Quốc APM150 (Đen)" price="770000">
+    <Brand id_brand="3" brand_name="Louis Vuitton" />
+    <Category id_cate="ak2 " />
+  </Product>
+  <Product id_product="sp29" product_name="Áo khoác phao" description="Áo khoác phao nữ dáng choàng dài siêu ấm sành điệu kiểu Hàn Quốc APM150 (Đen)" price="700000">
+    <Brand id_brand="4" brand_name="Céline" />
+    <Category id_cate="ak2 " />
+  </Product>
+  <Product id_product="sp30" product_name="Đồ bộ nữ báo đốm" description="Đồ bộ nữ mặc ở nhà, Đồ bộ mặc nhà nữ tay lỡ cổ sen thu đông đẹp" price="100000">
+    <Brand id_brand="4" brand_name="Céline" />
+    <Category id_cate="db2 " />
+  </Product>
+  <Product id_product="sp31" product_name="Đồ bộ nữ quần lững" description="Đồ bộ nữ mặc ở nhà, Đồ bộ mặc nhà nữ tay lỡ cổ sen thu đông đẹp" price="100000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="db2 " />
+  </Product>
+  <Product id_product="sp32" product_name="Đồ bộ nữ " description="Đồ bộ nữ mặc ở nhà, Đồ bộ mặc nhà nữ tay lỡ cổ sen thu đông đẹp" price="100000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="db2 " />
+  </Product>
+  <Product id_product="sp33" product_name="Đồ bộ nữ màu xanh" description="Đồ bộ nữ mặc ở nhà, Đồ bộ mặc nhà nữ tay lỡ cổ sen thu đông đẹp" price="110000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="db2 " />
+  </Product>
+  <Product id_product="sp34" product_name="Váy đỏ kiểu xòe hở vai" description="Váy đỏ kiểu xòe cọc tay, chuẩn cô dâu" price="900000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="vd2 " />
+  </Product>
+  <Product id_product="sp35" product_name="Váy trắng công chúa" description="Váy đỏ kiểu xòe cọc tay, chuẩn cô dâu" price="900000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="vd2 " />
+  </Product>
+  <Product id_product="sp36" product_name="Váy trắng ôm sát" description="Váy đỏ kiểu xòe cọc tay, chuẩn cô dâu" price="900000">
+    <Brand id_brand="4" brand_name="Céline" />
+    <Category id_cate="vd2 " />
+  </Product>
+  <Product id_product="sp37" product_name="Váy cưới trắng" description="Váy đỏ kiểu xòe cọc tay, chuẩn cô dâu" price="900000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="vd2 " />
+  </Product>
+  <Product id_product="sp38" product_name="Áo đỏ họa tiết máy bay" description="Thoáng mát, dễ chịu, màu đỏ, họa tiết bắt mắt" price="90000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="abt3" />
+  </Product>
+  <Product id_product="sp39" product_name="Áo Xanh họa tiết mặt trời" description="Thoáng mát, dễ chịu, màu đỏ, họa tiết bắt mắt" price="90000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="abt3" />
+  </Product>
+  <Product id_product="sp40" product_name="Áo Vàng cọc tay" description="Thoáng mát, dễ chịu, màu đỏ, họa tiết bắt mắt" price="90000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="abt3" />
+  </Product>
+  <Product id_product="sp41" product_name="Áo polo lịch lảm" description="Thoáng mát, dễ chịu, màu đỏ, họa tiết bắt mắt" price="90000">
+    <Brand id_brand="4" brand_name="Céline" />
+    <Category id_cate="abt3" />
+  </Product>
+  <Product id_product="sp42" product_name="Áo xinh cho bé" description="áo mặc nhà thời trang cho bé yêu,  đồ bộ đi học mẫu giáo cho bé gái" price="120000">
+    <Brand id_brand="4" brand_name="Céline" />
+    <Category id_cate="abg3" />
+  </Product>
+  <Product id_product="sp43" product_name="Áo dễ thương cho bé" description="áo mặc nhà thời trang cho bé yêu,  đồ bộ đi học mẫu giáo cho bé gái" price="120000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="abg3" />
+  </Product>
+  <Product id_product="sp44" product_name="Áo trắng xinh cho bé" description="áo mặc nhà thời trang cho bé yêu,  đồ bộ đi học mẫu giáo cho bé gái" price="120000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="abg3" />
+  </Product>
+  <Product id_product="sp45" product_name="Áo xinh cho bé" description="áo mặc nhà thời trang cho bé yêu,  đồ bộ đi học mẫu giáo cho bé gái" price="120000">
+    <Brand id_brand="3" brand_name="Louis Vuitton" />
+    <Category id_cate="abg3" />
+  </Product>
+  <Product id_product="sp46" product_name="Quần đui bé trai" description="Quần short kaki bé trai hàng VN xuất xịn đẹp mỹ mãn từ 19kg đến 24kg màu kem" price="120000">
+    <Brand id_brand="3" brand_name="Louis Vuitton" />
+    <Category id_cate="qbt3" />
+  </Product>
+  <Product id_product="sp47" product_name="Quần đui bé trai" description="Quần short kaki bé trai hàng VN xuất xịn đẹp mỹ mãn từ 19kg đến 24kg màu kem" price="120000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="qbt3" />
+  </Product>
+  <Product id_product="sp48" product_name="Quần dài bé trai" description="Quần short kaki bé trai hàng VN xuất xịn đẹp mỹ mãn từ 19kg đến 24kg màu kem" price="120000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="qbt3" />
+  </Product>
+  <Product id_product="sp49" product_name="Quần đui bé trai" description="Quần short kaki bé trai hàng VN xuất xịn đẹp mỹ mãn từ 19kg đến 24kg màu kem" price="120000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="qbt3" />
+  </Product>
+  <Product id_product="sp50" product_name="Quần đui bé gái" description="Quần short kaki bé trai hàng VN xuất xịn đẹp mỹ mãn từ 19kg đến 24kg màu kem" price="120000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="qbg3" />
+  </Product>
+  <Product id_product="sp51" product_name="Quần đùi bé gái" description="Quần short kaki bé trai hàng VN xuất xịn đẹp mỹ mãn từ 19kg đến 24kg màu kem" price="120000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="qbg3" />
+  </Product>
+  <Product id_product="sp52" product_name="Quần đui bé gái" description="Quần short kaki bé trai hàng VN xuất xịn đẹp mỹ mãn từ 19kg đến 24kg màu kem" price="120000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="qbg3" />
+  </Product>
+  <Product id_product="sp53" product_name="Quần jeans bé gái" description="Quần short kaki bé trai hàng VN xuất xịn đẹp mỹ mãn từ 19kg đến 24kg màu kem" price="120000">
+    <Brand id_brand="4" brand_name="Céline" />
+    <Category id_cate="qbg3" />
+  </Product>
+  <Product id_product="sp54" product_name="Đầm bé giá xinh xắn" description="Thiết kế 4 lớp cao cấp, chân váy phồng tạo và họa tiết hoa hồng đính kèm ở phía trước tạo nên sự nổi bật cho bé khi đi bất cứ buổi dạ tiệc nào" price="220000">
+    <Brand id_brand="4" brand_name="Céline" />
+    <Category id_cate="d3  " />
+  </Product>
+  <Product id_product="sp55" product_name="Đầm bé gái xinh xắn" description="Thiết kế 4 lớp cao cấp, chân váy phồng tạo và họa tiết hoa hồng đính kèm ở phía trước tạo nên sự nổi bật cho bé khi đi bất cứ buổi dạ tiệc nào" price="320000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="d3  " />
+  </Product>
+  <Product id_product="sp56" product_name="Đầm bé gái xinh xắn" description="Thiết kế 4 lớp cao cấp, chân váy phồng tạo và họa tiết hoa hồng đính kèm ở phía trước tạo nên sự nổi bật cho bé khi đi bất cứ buổi dạ tiệc nào" price="120000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="d3  " />
+  </Product>
+  <Product id_product="sp57" product_name="Đầm bé gái xinh xắn" description="Thiết kế 4 lớp cao cấp, chân váy phồng tạo và họa tiết hoa hồng đính kèm ở phía trước tạo nên sự nổi bật cho bé khi đi bất cứ buổi dạ tiệc nào" price="220000">
+    <Brand id_brand="4" brand_name="Céline" />
+    <Category id_cate="d3  " />
+  </Product>
+  <Product id_product="sp58" product_name="Bộ đồ bóng đá" description="Anh bảy mãi là GOAT" price="220000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="bd4 " />
+  </Product>
+  <Product id_product="sp59" product_name="Bộ đồ bóng đá" description="Anh bảy mãi là GOAT" price="220000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="bd4 " />
+  </Product>
+  <Product id_product="sp60" product_name="Bộ đồ bóng đá CR7" description="Anh bảy mãi là GOAT" price="220000">
+    <Brand id_brand="3" brand_name="Louis Vuitton" />
+    <Category id_cate="bd4 " />
+  </Product>
+  <Product id_product="sp61" product_name="Bộ đồ Anh Bảy" description="Anh bảy mãi là GOAT" price="220000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="bd4 " />
+  </Product>
+  <Product id_product="sp62" product_name="Bộ đồ bóng rổ màu trắng" description="Bước tiếp với đam mê của mình" price="220000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="br4 " />
+  </Product>
+  <Product id_product="sp63" product_name="Bộ đồ bóng rổ màu trắng và đen" description="Bước tiếp với đam mê của mình" price="220000">
+    <Brand id_brand="4" brand_name="Céline" />
+    <Category id_cate="br4 " />
+  </Product>
+  <Product id_product="sp64" product_name="Bộ đồ bóng rổ màu đen viền đỏ" description="Bước tiếp với đam mê của mình" price="220000">
+    <Brand id_brand="4" brand_name="Céline" />
+    <Category id_cate="br4 " />
+  </Product>
+  <Product id_product="sp65" product_name="Bộ đồ bóng rổ huyền thoại" description="Bước tiếp với đam mê của mình" price="220000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="br4 " />
+  </Product>
+  <Product id_product="sp66" product_name="Bộ đồ bóng chuyền trắng" description="Bước tiếp với đam mê của mình" price="220000">
+    <Brand id_brand="2" brand_name="Gucci" />
+    <Category id_cate="bc4 " />
+  </Product>
+  <Product id_product="sp67" product_name="Bộ đồ bóng chuyền đỏ" description="Bước tiếp với đam mê của mình" price="220000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="bc4 " />
+  </Product>
+  <Product id_product="sp68" product_name="Bộ đồ bóng chuyền Xanh trộn trắng" description="Bước tiếp với đam mê của mình" price="220000">
+    <Brand id_brand="1" brand_name="Dior" />
+    <Category id_cate="bc4 " />
+  </Product>
+  <Product id_product="sp69" product_name="Bộ đồ bóng chuyền huyền thoại" description="Bước tiếp với đam mê của mình" price="220000">
+    <Brand id_brand="4" brand_name="Céline" />
+    <Category id_cate="bc4 " />
+  </Product>
+</vanluong>
