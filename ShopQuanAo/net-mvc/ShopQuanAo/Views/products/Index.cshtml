@@ -1,81 +1,135 @@
-﻿@model IEnumerable<ShopQuanAo.Models.product>
+﻿
 
+@model IEnumerable<ShopQuanAo.Models.product>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <div class="container">
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.stt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.name_product)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.images)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.price_new)
-        </th>
-       
-        <th>
-            @Html.DisplayNameFor(model => model.describe)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.quantity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Brand.brand_name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.subCategory.name_subcate)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.stt)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.name_product)
-    </td>
-    <td>
-        <img style="width: 50px; height :50px;" src="~/assets/images/products/@Html.DisplayFor(modelItem => item.images)" alt="Image">
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.price_new)
-    </td>
-
-    <td>
-        @Html.DisplayFor(modelItem => item.describe)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.quantity)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Brand.brand_name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.subCategory.name_subcate)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.id_product }) |
-        @Html.ActionLink("Details", "Details", new { id = item.id_product }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.id_product })
-    </td>
-</tr>
-}
-
-</table>
+    <h2>QUẢN LÝ SẢN PHẨM</h2>
+    <div class="create-button-container">
+        @Html.ActionLink("Create New", "Create", null, new { @class = "create-button" })
     </div>
+
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr class="center">
+                    <th>STT</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Ảnh</th>
+                    <th>Giá</th>
+                    <th>Mô tả</th>
+                    <th>Số lượng</th>
+                    <th>Thương hiệu</th>
+                    <th>Danh mục</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.stt</td>
+                        <td>@item.name_product</td>
+                        <td><img src="~/assets/images/products/@item.images" alt="Image" class="product-image"></td>
+                        <td>@item.price_new</td>
+                        <td>@item.describe</td>
+                        <td>@item.quantity</td>
+                        <td>@item.Brand.brand_name</td>
+                        <td class="category-column">@item.subCategory.name_subcate</td>
+                        <td>
+                            <a href="@Url.Action("Edit", new { id = item.id_product })" class="action-link"><i class="fas fa-edit"></i></a>
+                            <a href="@Url.Action("Details", new { id = item.id_product })" class="action-link"><i class="fas fa-info-circle"></i></a>
+                            <a href="@Url.Action("Delete", new { id = item.id_product })" class="action-link"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    .create-button-container {
+        text-align: right;
+        margin-bottom: 20px;
+    }
+
+    .create-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+        .create-button:hover {
+            background-color: #45a049;
+        }
+
+    .table-container {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-top: 20px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th,
+        .table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            vertical-align: middle;
+        }
+
+        .table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background-color: #F0FFF0; /* Màu xanh nhạt */
+        }
+
+        .table tbody tr:nth-child(odd) {
+            background-color: #ffffff; /* Màu trắng */
+        }
+
+    .product-image {
+        width: 100%;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    .action-link {
+        margin-right: 5px;
+        color: #555;
+        text-decoration: none;
+        font-size: 18px; 
+    }
+
+        .action-link:hover {
+            color: #000;
+        }
+
+    .table td.category-column {
+        width: 150px; /* Đặt chiều rộng cố định cho cột danh mục */
+    }
+
+    .table td.category-column {
+        width: 150px; 
+    }
+</style>
+

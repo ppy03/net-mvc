@@ -1,5 +1,4 @@
 ﻿@model ShopQuanAo.Models.product
-
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
@@ -8,12 +7,11 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>product</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -97,9 +95,63 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Trở về trang trước", "Index")
 </div>
 
 @*@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}*@
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@
+
+
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f8f8;
+        color: #333;
+        padding: 20px;
+    }
+
+    h2 {
+        color: #007bff;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: auto;
+    }
+
+    h4 {
+        color: #007bff;
+        font-size: 24px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        background-color: #6A5ACD;
+        color: #fff;
+        transition: background-color 0.3s;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3
+</style>

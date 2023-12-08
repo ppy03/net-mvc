@@ -5,87 +5,91 @@
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
-<h2>Details</h2>
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">CHI TIẾT SẢN PHẨM</h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="~/assets/images/products/@Html.DisplayFor(modelItem => Model.images)" class="img-fluid" alt="Product Image">
+                </div>
+                <div class="col-md-8">
+                    <dl class="row">
+                        <dt class="col-sm-3">Số thứ tự</dt>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.stt)</dd>
 
-<div>
-    <h4>product</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.stt)
-        </dt>
+                        <dt class="col-sm-3">Tên sản phẩm</dt>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.name_product)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.stt)
-        </dd>
+                        <dt class="col-sm-3">Giá mới</dt>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.price_new)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.name_product)
-        </dt>
+                        <dt class="col-sm-3">Giá cũ</dt>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.price_old)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.name_product)
-        </dd>
+                        <dt class="col-sm-3">Mô tả</dt>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.describe)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.images)
-        </dt>
+                        <dt class="col-sm-3">Số lượng</dt>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.quantity)</dd>
 
-        <dd>
-            <img style="width: 150px; height :150px;" src="~/assets/images/products/@Html.DisplayFor(modelItem => Model.images)" alt="Image">
-        </dd>
+                        <dt class="col-sm-3">Thương hiệu</dt>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.Brand.brand_name)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.price_new)
-        </dt>
+                        <dt class="col-sm-3">Danh mục con</dt>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.subCategory.name_subcate)</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.price_new)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.price_old)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.price_old)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.describe)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.describe)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.quantity)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.quantity)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Brand.brand_name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Brand.brand_name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.subCategory.name_subcate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.subCategory.name_subcate)
-        </dd>
-
-    </dl>
+    <div class="form-actions no-color mt-3">
+        <a href="@Url.Action("Edit", new { id = Model.id_product })" class="btn btn-primary">Chỉnh sửa</a> |
+        @Html.ActionLink("Trở về trang trước", "Index")
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id_product }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f8f8;
+        color: #333;
+        padding: 20px;
+    }
+
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: box-shadow 0.3s;
+    }
+
+    .card-header {
+        padding: 20px;
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+    .img-fluid {
+        width: 100%;
+        height: auto;
+    }
+
+    dl {
+        margin-top: 10px;
+    }
+
+    dt, dd {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .form-actions {
+        margin-top: 20px;
+    }
+</style>

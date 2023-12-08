@@ -5,19 +5,19 @@
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>CHỈNH SỬA</h2>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>product</h4>
+        <h4>SẢN PHẨM</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.stt, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.stt, "STT", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.stt, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.stt, "", new { @class = "text-danger" })
@@ -27,7 +27,7 @@
         @Html.HiddenFor(model => model.id_product)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.name_product, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.name_product, "Tên sản phẩm", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.name_product, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.name_product, "", new { @class = "text-danger" })
@@ -35,15 +35,15 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.images, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.images, "Hình ảnh", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.images, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.images, "", new { @class = "text-danger" })
+                <img src="@Url.Content("~/assets/images/products/" + Model.images)" alt="Image" class="product-image">
+
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.price_new, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.price_new, "Gía mới", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.price_new, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.price_new, "", new { @class = "text-danger" })
@@ -51,7 +51,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.price_old, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.price_old, "Gía cũ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.price_old, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.price_old, "", new { @class = "text-danger" })
@@ -59,7 +59,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.describe, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.describe, "Mô tả", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.describe, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.describe, "", new { @class = "text-danger" })
@@ -67,7 +67,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.quantity, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.quantity, "Số lượng", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.quantity, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.quantity, "", new { @class = "text-danger" })
@@ -75,7 +75,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.id_subcate, "id_subcate", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.id_subcate, "Danh mục", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("id_subcate", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.id_subcate, "", new { @class = "text-danger" })
@@ -83,7 +83,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.id_brand, "id_brand", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.id_brand, "Thương hiệu", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("id_brand", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.id_brand, "", new { @class = "text-danger" })
@@ -99,9 +99,85 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Trở về trang trước", "Index")
 </div>
 
 @*@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}*@
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f8f8;
+        color: #333;
+    }
+
+    h2 {
+        color: #007bff;
+        font-size: 24px;
+    }
+
+    .form-horizontal {
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-default {
+        background-color: #007bff;
+        color: #fff;
+        transition: background-color 0.3s;
+    }
+
+        .btn-default:hover {
+            background-color: #0056b3;
+        }
+
+    .text-danger {
+        color: #dc3545;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .control-label {
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .col-md-2 {
+        width: 15%;
+    }
+
+    .col-md-10 {
+        width: 85%;
+    }
+
+    .btn {
+        padding: 10px 20px;
+    }
+
+    .form-control {
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    a
+    select.form-control {
+        height: 38px;
+        div
+
+    {
+        margin-bottom: 10px;
+    }
+    product-image {
+        width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+        border-radius: 4px;
+        border: 1px solid red;
+    }
+</style>

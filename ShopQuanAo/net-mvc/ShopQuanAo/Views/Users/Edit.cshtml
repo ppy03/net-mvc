@@ -5,29 +5,29 @@
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>CHỈNH SỬA</h2>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>User</h4>
+        <h4>THÔNG TIN</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.id_user)
-
         <div class="form-group">
-            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.email , "", new { @class = "text-danger" })
             </div>
         </div>
 
+        @Html.HiddenFor(model => model.id_user)
+
         <div class="form-group">
-            @Html.LabelFor(model => model.name_user, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.name_user, "Tên đăng nhập", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.name_user, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.name_user, "", new { @class = "text-danger" })
@@ -35,7 +35,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.phonenumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.phonenumber, "Số điện thoại", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.phonenumber, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.phonenumber, "", new { @class = "text-danger" })
@@ -43,7 +43,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.pass, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.pass, "Mật khẩu", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.pass, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.pass, "", new { @class = "text-danger" })
@@ -57,8 +57,79 @@
         </div>
     </div>
 }
-
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Trở về trang trước", "Index")
 </div>
 
+@*@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f8f8;
+        color: #333;
+    }
+
+    h2 {
+        color: #007bff;
+        font-size: 24px;
+    }
+
+    .form-horizontal {
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-default {
+        background-color: #007bff;
+        color: #fff;
+        transition: background-color 0.3s;
+    }
+
+        .btn-default:hover {
+            background-color: #0056b3;
+        }
+
+    .text-danger {
+        color: #dc3545;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .control-label {
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .col-md-2 {
+        width: 15%;
+    }
+
+    .col-md-10 {
+        width: 85%;
+    }
+
+    .btn {
+        padding: 10px 20px;
+    }
+
+    .form-control {
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    a
+    select.form-control {
+        height: 38px;
+        div
+
+    {
+        margin-bottom: 10px;
+    }
+</style>
