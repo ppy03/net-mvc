@@ -16,6 +16,9 @@
         <AssociationConnector Association="SHOPAOQUAN.FK__subCatego__id_ca__3F466844" ManuallyRouted="false" />
         <AssociationConnector Association="SHOPAOQUAN.FK__product__id_subc__440B1D61" ManuallyRouted="false" />
         <AssociationConnector Association="SHOPAOQUAN.FK__sale__id_product__47DBAE45" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SHOPAOQUAN.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="SHOPAOQUAN.roles" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="SHOPAOQUAN.Users" Width="1.5" PointX="4.75" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

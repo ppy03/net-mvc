@@ -34,6 +34,8 @@ namespace ShopQuanAo.Models
         public string name_user { get; set; }
         public string phonenumber { get; set; }
         public string pass { get; set; }
+        public string roles { get; set; }
+        public string name_roles { get; set; }
 
     }
 }

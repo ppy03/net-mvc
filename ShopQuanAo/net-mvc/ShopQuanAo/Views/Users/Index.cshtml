@@ -2,47 +2,446 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+
 }
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!DOCTYPE html>
 
-<div class="container">
-    <h2>QUẢN LÝ TÀI KHOẢN</h2>
-    <div class="create-button-container">
-        @Html.ActionLink("Tạo mới", "Create", null, new { @class = "create-button" })
-    </div>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="MediaCenter, Template, eCommerce">
+    <meta name="robots" content="all">
+    <title>Web-Shop</title>
 
-    <div class="table-container">
-        <table class="table">
-            <thead>
-                <tr class="center">
-                    <th>Email</th>
-                    <th>Tên đăng nhập</th>
-                    <th>Số điện thoại</th>
-                    <th>Mật khẩu</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>@item.email</td>
-                        <td>@item.name_user</td>
-                        <td>@item.phonenumber</td>
-                        <td>@item.pass</td>
-                        <td>
-                            <a href="@Url.Action("Edit", new { id = item.id_user })" class="action-link"><i class="fas fa-edit"></i></a>
-                            <a href="@Url.Action("Details", new { id = item.id_user })" class="action-link"><i class="fas fa-info-circle"></i></a>
-                            <a href="@Url.Action("Delete", new { id = item.id_user })" class="action-link"><i class="fas fa-trash-alt"></i></a>
-                        </td>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="~/assets\css\bootstrap.min.css">
+
+    <!-- Customizable CSS -->
+    <link rel="stylesheet" href="~/assets\css\main.css">
+    <link rel="stylesheet" href="~/assets\css\blue.css">
+    <link rel="stylesheet" href="~/assets\css\owl.carousel.css">
+    <link rel="stylesheet" href="~/assets\css\owl.transitions.css">
+    <link rel="stylesheet" href="~/assets\css\animate.min.css">
+    <link rel="stylesheet" href="~/assets\css\rateit.css">
+    <link rel="stylesheet" href="~/assets\css\bootstrap-select.min.css">
+
+    <!-- Icons/Glyphs -->
+    <link rel="stylesheet" href="~/assets\css\font-awesome.css">
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body class="cnt-home">
+    <!-- ============================================== HEADER ============================================== -->
+    <header class="header-style-1">
+
+        <!-- ============================================== TOP MENU ============================================== -->
+        <div class="top-bar animate-dropdown">
+            <div class="container">
+                <div class="header-top-inner">
+                    <div class="cnt-account">
+                        <ul class="list-unstyled">
+
+                            
+                            @{
+                                string user = "";
+
+                                if (HttpContext.Current.Session["LoggedInUser"] != null)
+                                {
+                                    user = HttpContext.Current.Session["LoggedInUser"].ToString();
+
+                                }
+                                else
+                                {
+                                    user = "Đăng Nhập";
+                                }
+                            }
+                            @{
+                                if (user == HttpContext.Current.Session["LoggedInUser"])
+                                {
+                                    <li><a href="~/Users/Index"><i class="icon fa fa-user"></i>@user|Admin</a></li>
+                                    <li><a href="~/Login/LogOut"><i class="icon fa fa-check"></i>Logn out</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href="~/Login/index"><i class="icon fa fa-user"></i>Đăng nhập</a></li>
+                                }
+
+                            }
+
+
+                        </ul>
+                    </div>
+                    <!-- /.cnt-account -->
+
+                    <div class="cnt-block">
+                        <ul class="list-unstyled list-inline">
+                            <li class="dropdown dropdown-small">
+                                <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">Việt Nam </span><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Việt Nam</a></li>
+                                    <li><a href="#">English</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- /.list-unstyled -->
+                    </div>
+                    <!-- /.cnt-cart -->
+                    <div class="clearfix"></div>
+                </div>
+                <!-- /.header-top-inner -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.header-top -->
+        <!-- ============================================== TOP MENU : END ============================================== -->
+        <div class="main-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
+                        <!-- ============================================================= LOGO ============================================================= -->
+                        <div class="logo"> <a href="~/Home"> <img src="~/assets\images\logo.png" alt="logo"> </a> </div>
+                        <!-- /.logo -->
+                        <!-- ============================================================= LOGO : END ============================================================= -->
+                    </div>
+                    <!-- /.logo-holder -->
+                    <div class="col-xs-12 col-sm-12 col-md-7 top-search-holder">
+                        <!-- /.contact-row -->
+                        <!-- ============================================================= SEARCH AREA ============================================================= -->
+                        <div class="search-area">
+
+                            <form>
+                                <div class="control-group">
+                                    @*<ul class="categories-filter animate-dropdown">
+
+                                            <li class="dropdown">
+                                                @foreach (var name in ViewBag.Categories)
+                                                {
+                                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
+                                                    <ul class="dropdown-menu" role="menu">
+
+                                                        <li role="presentation"><a role="menuitem" tabindex="-1" data-category="@name.cate_name" href="">- @name.cate_name</a></li>
+
+                                                    </ul>
+                                                }
+                                            </li>
+
+                                        </ul>*@
+                                    @*<ul class="categories-filter animate-dropdown">
+                                            <li class="dropdown">
+                                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                                    @if (!string.IsNullOrEmpty(selectedCategory))
+                                                    {
+                                                       @selectedCategory
+                                                    }
+                                                    <b class="caret"></b>
+                                                </a>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    @foreach (var name in ViewBag.Categories)
+                                                    {
+                                                        <li role="presentation">
+                                                            <button type="submit" name="selectedCategory" value="@name.cate_name" class="dropdown-item">- @name.cate_name</button>
+                                                        </li>
+                                                    }
+                                                </ul>
+                                            </li>
+                                        </ul>*@
+                                    <ul class="categories-filter animate-dropdown">
+                                        <li class="dropdown">
+
+                                            <a class="dropdown-toggle dropdown-toggles" data-toggle="dropdown" href="#">Danh mục<b class="caret"></b></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                @foreach (var name in ViewBag.Categories)
+                                                {
+                                                    <li role="presentation">
+                                                        <a role="menuitem" tabindex="-1" data-category="@name.cate_name" href="#" class="category-items category-item">- @name.cate_name</a>
+                                                    </li>
+                                                }
+                                            </ul>
+
+
+                                        </li>
+                                    </ul>
+
+                                    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                                    <script>
+                                        $(document).ready(function () {
+                                            $('.category-items').on('click', function (e) {
+                                                            e.preventDefault(); // Prevent the default behavior of the anchor tag
+
+                                                            var categoryName = $(this).data('category');
+                                                $('.dropdown-toggles').text(categoryName);
+                                                        });
+                                                    });
+                                    </script>
+                                    <input class="search-field" placeholder="Nhập từ khoá tìm kiếm...">
+                                    <a style="height:45px" class="search-button" href="#"></a>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- /.search-area -->
+                        <!-- ============================================================= SEARCH AREA : END ============================================================= -->
+                    </div>
+                    <!-- /.top-search-holder -->
+
+                    <div class="col-xs-12 col-sm-12 col-md-2 animate-dropdown top-cart-row">
+                        <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
+                        <div class="dropdown dropdown-cart">
+                            <a href="shopping-cart.html" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
+                                <div class="items-cart-inner">
+                                    <div class="basket"> <i class="glyphicon glyphicon-shopping-cart"></i> </div>
+                                    <div class="basket-item-count"><span class="count">2</span></div>
+                                    <div class="total-price-basket"> <span class="lbl">cart -</span> <span class="total-price"> <span class="sign">$</span><span class="value">600.00</span> </span> </div>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <div class="cart-item product-summary">
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <div class="image"> <a href="detail.html"><img src="assets\images\cart.jpg" alt=""></a> </div>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <h3 class="name"><a href="index.php?page-detail">Simple Product</a></h3>
+                                                <div class="price">$600.00</div>
+                                            </div>
+                                            <div class="col-xs-1 action"> <a href="#"><i class="fa fa-trash"></i></a> </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.cart-item -->
+                                    <div class="clearfix"></div>
+                                    <hr>
+                                    <div class="clearfix cart-total">
+                                        <div class="pull-right"> <span class="text">Sub Total :</span><span class='price'>$600.00</span> </div>
+                                        <div class="clearfix"></div>
+                                        <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Thanh toán</a>
+                                    </div>
+                                    <!-- /.cart-total-->
+                                </li>
+                            </ul>
+                            <!-- /.dropdown-menu-->
+                        </div>
+                        <!-- /.dropdown-cart -->
+                        <!-- ============================================================= SHOPPING CART DROPDOWN : END============================================================= -->
+                    </div>
+                    <!-- /.top-cart-row -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.main-header -->
+        <!-- ============================================== NAVBAR ============================================== -->
+        <div class="header-nav animate-dropdown">
+            <div class="container">
+                <div class="yamm navbar navbar-default" role="navigation">
+                    <div class="nav-bg-class">
+                        <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
+                            
+                            <!-- /.nav-outer -->
+                        </div>
+                        <!-- /.navbar-collapse -->
+
+                    </div>
+                    <!-- /.nav-bg-class -->
+                </div>
+                <!-- /.navbar-default -->
+            </div>
+            <!-- /.container-class -->
+        </div>
+        <!-- /.header-nav -->
+        <!-- ============================================== NAVBAR : END ============================================== -->
+    </header>
+
+    <div class="container">
+        <h2>QUẢN LÝ TÀI KHOẢN</h2>
+        <div class="create-button-container">
+            @Html.ActionLink("Tạo mới", "Create", null, new { @class = "create-button" })
+        </div>
+
+        <div class="table-container">
+            <table class="table">
+                <thead>
+                    <tr class="center">
+                        <th>Email</th>
+                        <th>Tên đăng nhập</th>
+                        <th>Số điện thoại</th>
+                        <th>Mật khẩu</th>
+                        <th></th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.email</td>
+                            <td>@item.name_user</td>
+                            <td>@item.phonenumber</td>
+                            <td>@item.pass</td>
+                            <td>
+                                <a href="@Url.Action("Edit", new { id = item.id_user })" class="action-link"><i class="fas fa-edit"></i></a>
+                                <a href="@Url.Action("Details", new { id = item.id_user })" class="action-link"><i class="fas fa-info-circle"></i></a>
+                                <a href="@Url.Action("Delete", new { id = item.id_user })" class="action-link"><i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
+    <!-- ============================================================= FOOTER ============================================================= -->
+    <footer id="footer" class="footer color-bg">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="module-heading">
+                            <h4 class="module-title">Contact Us</h4>
+                        </div>
+                        <!-- /.module-heading -->
+
+                        <div class="module-body">
+                            <ul class="toggle-footer" style="">
+                                <li class="media">
+                                    <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i> </span> </div>
+                                    <div class="media-body">
+                                        <p>ThemesGround, 789 Main rd, Anytown, CA 12345 USA</p>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-mobile fa-stack-1x fa-inverse"></i> </span> </div>
+                                    <div class="media-body">
+                                        <p>
+                                            +(888) 123-4567<br>
+                                            +(888) 456-7890
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-envelope fa-stack-1x fa-inverse"></i> </span> </div>
+                                    <div class="media-body"> <span><a href="#">flipmart@themesground.com</a></span> </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.module-body -->
+                    </div>
+                    <!-- /.col -->
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="module-heading">
+                            <h4 class="module-title">Customer Service</h4>
+                        </div>
+                        <!-- /.module-heading -->
+
+                        <div class="module-body">
+                            <ul class='list-unstyled'>
+                                <li class="first"><a href="#" title="Contact us">My Account</a></li>
+                                <li><a href="#" title="About us">Order History</a></li>
+                                <li><a href="#" title="faq">FAQ</a></li>
+                                <li><a href="#" title="Popular Searches">Specials</a></li>
+                                <li class="last"><a href="#" title="Where is my order?">Help Center</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.module-body -->
+                    </div>
+                    <!-- /.col -->
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="module-heading">
+                            <h4 class="module-title">Corporation</h4>
+                        </div>
+                        <!-- /.module-heading -->
+
+                        <div class="module-body">
+                            <ul class='list-unstyled'>
+                                <li class="first"><a title="Your Account" href="#">About us</a></li>
+                                <li><a title="Information" href="#">Customer Service</a></li>
+                                <li><a title="Addresses" href="#">Company</a></li>
+                                <li><a title="Addresses" href="#">Investor Relations</a></li>
+                                <li class="last"><a title="Orders History" href="#">Advanced Search</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.module-body -->
+                    </div>
+                    <!-- /.col -->
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="module-heading">
+                            <h4 class="module-title">Why Choose Us</h4>
+                        </div>
+                        <!-- /.module-heading -->
+
+                        <div class="module-body">
+                            <ul class='list-unstyled'>
+                                <li class="first"><a href="#" title="About us">Shopping Guide</a></li>
+                                <li><a href="#" title="Blog">Blog</a></li>
+                                <li><a href="#" title="Company">Company</a></li>
+                                <li><a href="#" title="Investor Relations">Investor Relations</a></li>
+                                <li class=" last"><a href="contact-us.html" title="Suppliers">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.module-body -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-bar">
+            <div class="container">
+                <div class="col-xs-12 col-sm-6 no-padding social">
+                    <ul class="link">
+                        <li class="fb pull-left"><a target="_blank" rel="nofollow" href="#" title="Facebook"></a></li>
+                        <li class="tw pull-left"><a target="_blank" rel="nofollow" href="#" title="Twitter"></a></li>
+                        <li class="googleplus pull-left"><a target="_blank" rel="nofollow" href="#" title="GooglePlus"></a></li>
+                        <li class="rss pull-left"><a target="_blank" rel="nofollow" href="#" title="RSS"></a></li>
+                        <li class="pintrest pull-left"><a target="_blank" rel="nofollow" href="#" title="PInterest"></a></li>
+                        <li class="linkedin pull-left"><a target="_blank" rel="nofollow" href="#" title="Linkedin"></a></li>
+                        <li class="youtube pull-left"><a target="_blank" rel="nofollow" href="#" title="Youtube"></a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-6 no-padding">
+                    <div class="clearfix payment-methods">
+                        <ul>
+                            <li><img src="~/assets\images\payments\1.png" alt=""></li>
+                            <li><img src="~/assets\images\payments\2.png" alt=""></li>
+                            <li><img src="~/assets\images\payments\3.png" alt=""></li>
+                            <li><img src="~/assets\images\payments\4.png" alt=""></li>
+                            <li><img src="~/assets\images\payments\4.png" alt=""></li>
+                            <li><img src="~/assets\images\payments\5.png" alt=""></li>
+                        </ul>
+                    </div>
+                    <!-- /.payment-methods -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/assets\js\jquery-1.11.1.min.js"></script>
+    <script src="~/assets\js\bootstrap.min.js"></script>
+    <script src="~/assets\js\bootstrap-hover-dropdown.min.js"></script>
+    <script src="~/assets\js\owl.carousel.min.js"></script>
+    <script src="~/assets\js\echo.min.js"></script>
+    <script src="~/assets\js\jquery.easing-1.3.min.js"></script>
+    <script src="~/assets\js\bootstrap-slider.min.js"></script>
+    <script src="~/assets\js\jquery.rateit.min.js"></script>
+    <script type="~/text/javascript" src="assets\js\lightbox.min.js"></script>
+    <script src="~/assets\js\bootstrap-select.min.js"></script>
+    <script src="~/assets\js\wow.min.js"></script>
+    <script src="~/assets\js\scripts.js"></script>
+    <script src="~/assets/js/countdown.js"></script>
+    <script src="~/assets/js/decr-incr.js"></script>
+
+</body>
+</html>
+
 <style>
     .create-button-container {
         text-align: right;

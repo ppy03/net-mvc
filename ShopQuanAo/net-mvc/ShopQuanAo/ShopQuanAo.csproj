@@ -380,6 +380,7 @@
     <Content Include="Views\Sanpham\sanphamnu.cshtml" />
     <Content Include="Views\Sanpham\treem.cshtml" />
     <Content Include="Views\Sanpham\thethao.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

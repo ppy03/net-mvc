@@ -72,6 +72,8 @@
     <Property Name="name_user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="phonenumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="pass" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="roles" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="name_roles" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
   </EntityType>
   <Association Name="FK__product__id_bran__44FF419A">
     <End Role="Brand" Type="Self.Brand" Multiplicity="0..1">
@@ -153,5 +155,35 @@
       <End Role="product" EntitySet="product" />
       <End Role="sale" EntitySet="sale" />
     </AssociationSet>
+    <EntitySet Name="C__MigrationHistory" EntityType="SHOPAOQUAN.C__MigrationHistory" />
+    <EntitySet Name="roles" EntityType="SHOPAOQUAN.roles" />
+    <EntitySet Name="Users" EntityType="SHOPAOQUAN.Users" />
   </EntityContainer>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="roles">
+    <Key>
+      <PropertyRef Name="id_role" />
+    </Key>
+    <Property Name="id_role" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="name_role" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="id_user" />
+    </Key>
+    <Property Name="id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="name_user" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="phonenumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

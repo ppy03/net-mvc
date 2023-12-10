@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="SHOPAOQUAN.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
   <EntityType Name="Brand">
     <Key>
       <PropertyRef Name="id_brand" />
@@ -29,6 +39,13 @@
     <Property Name="quantity" Type="numeric" Precision="18" Scale="0" />
     <Property Name="id_subcate" Type="char" MaxLength="4" />
     <Property Name="id_brand" Type="int" />
+  </EntityType>
+  <EntityType Name="roles">
+    <Key>
+      <PropertyRef Name="id_role" />
+    </Key>
+    <Property Name="id_role" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="name_role" Type="varchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="sale">
     <Key>
@@ -64,6 +81,18 @@
     <Property Name="name_user" Type="nvarchar" MaxLength="50" />
     <Property Name="phonenumber" Type="varchar" MaxLength="10" />
     <Property Name="pass" Type="varchar" MaxLength="30" />
+    <Property Name="roles" Type="varchar" MaxLength="1" />
+    <Property Name="name_roles" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="id_user" />
+    </Key>
+    <Property Name="id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" />
+    <Property Name="name_user" Type="nvarchar(max)" />
+    <Property Name="phonenumber" Type="nvarchar(max)" />
+    <Property Name="pass" Type="nvarchar(max)" />
   </EntityType>
   <Association Name="FK__product__id_bran__44FF419A">
     <End Role="Brand" Type="Self.Brand" Multiplicity="0..1">
@@ -122,13 +151,16 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="SHOPAOQUANStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="product" EntityType="Self.product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="roles" EntityType="Self.roles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sale" EntityType="Self.sale" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="size" EntityType="Self.size" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="subCategory" EntityType="Self.subCategory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__product__id_bran__44FF419A" Association="Self.FK__product__id_bran__44FF419A">
       <End Role="Brand" EntitySet="Brand" />
       <End Role="product" EntitySet="product" />

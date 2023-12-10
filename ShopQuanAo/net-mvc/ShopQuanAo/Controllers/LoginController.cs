@@ -24,6 +24,20 @@ namespace ShopQuanAo.Controllers
 
             return View();
         }
+        public ActionResult Login()
+        {
+            SHOPAOQUANEntities1 db = new SHOPAOQUANEntities1();
+
+            List<Category> danhmuccha = db.Category.ToList();
+            List<subCategory> danhmuccon = db.subCategory.ToList();
+            List<User> users = db.User.ToList();
+
+            ViewBag.Categories = danhmuccha;
+            ViewBag.subCategories = danhmuccon;
+            ViewBag.Users = users;
+
+            return View();
+        }
         //đăng ký
         private ApplicationDbContext db = new ApplicationDbContext(); // Khởi tạo Database Context
 
@@ -44,7 +58,7 @@ namespace ShopQuanAo.Controllers
                 if (existingUser != null)
                 {
                     TempData["errorr"] = "Email đã tồn tại!";
-                    return RedirectToAction("Index", "Login");
+                    return RedirectToAction("Login", "Login");
                 }
 
                 // Lưu thông tin người dùng vào cơ sở dữ liệu
@@ -72,13 +86,22 @@ namespace ShopQuanAo.Controllers
             {
                 var user = db.Users.FirstOrDefault(u => u.email == email && u.pass == PassWord);
 
-                if (user != null)
+                if (user != null && user.roles != "2")
                 {
+
                     // Người dùng hợp lệ, thực hiện các thao tác cần thiết
                     // Ví dụ: lưu thông tin người dùng vào Session và chuyển hướng
                     Session["LoggedInUser"] = user.name_user;
                     return RedirectToAction("Home", "Home");
-                }
+                }  
+                    
+                if(user != null && user.roles == "2")
+                {
+                    // Người dùng hợp lệ, thực hiện các thao tác cần thiết
+                    // Ví dụ: lưu thông tin người dùng vào Session và chuyển hướng
+                    Session["LoggedInUser"] = user.name_user;
+                    return RedirectToAction("Index", "Users");
+                }               
                 else
                 {
                     // Người dùng không hợp lệ, hiển thị thông báo lỗi
@@ -86,7 +109,9 @@ namespace ShopQuanAo.Controllers
                     TempData["error"] = "Tài khoản đăng nhập không đúng";
                     return RedirectToAction("Index", "Login");
                 }
+                
             }
+
         }
         public ActionResult LogOut()
         {

@@ -7,8 +7,8 @@
     <div class="container">
         <div class="breadcrumb-inner">
             <ul class="list-inline list-unstyled">
-                <li><a href="~/Home">Home</a></li class='active'>
-                <li class='active'>Đăng nhập</li>
+                <li><a href="~/Home">Home</a></li>
+                <li class='active'>Đăng ký</li>
             </ul>
         </div><!-- /.breadcrumb-inner -->
     </div><!-- /.container -->
@@ -18,41 +18,38 @@
         <div class="sign-in-page">
             <div class="row">
                 <!-- Sign-in -->
-                <div class="col-md-6 col-sm-6 sign-in">
-                    <h4 class="">Đăng nhập</h4>
-                    <p class="">Xin chào, Chào mừng bạn đến với tài khoản của bạn.</p>
-                    <div class="social-sign-in outer-top-xs">
-                        <a href="#" class="facebook-sign-in"><i class="fa fa-facebook"></i> Đăng nhập bằng facebook</a>
-                        <a href="#" class="twitter-sign-in"><i class="fa fa-google"></i> Đăng nhập bằng google</a>
-                    </div>
-                    <form class="register-form outer-top-xs" role="form" method="post" action="/Login/Login">
+                <div class="col-md-6 col-sm-6 create-new-account">
+                    <h4 class="checkout-subtitle">Tạo tài khoản mới</h4>
+                    
+                    <form class="register-form outer-top-xs" role="form" method="post" action="/Login/DangKy">
                         <div class="form-group">
-                            <label class="info-title" for="exampleInputEmail1">Địa chỉ Email<span>*</span></label>
-
-                            <input type="email" placeholder="Email" name="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
-
+                            <label class="info-title" for="exampleInputEmail2">Địa chỉ Email<span>*</span></label>
+                            <input type="email" name="email" class="form-control unicase-form-control text-input" id="exampleInputEmail2">
                         </div>
                         <div class="form-group">
-                            <label class="info-title" for="exampleInputPassword1">Mật khẩu <span>*</span></label>
-
-                            <input type="password" placeholder="Mật khẩu" name="PassWord" class="form-control unicase-form-control text-input" id="exampleInputPassword1">
-
+                            <label class="info-title" for="exampleInputEmail1">Họ và tên <span>*</span></label>
+                            <input type="text" name="name_user" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
                         </div>
-                        <div class="radio outer-xs">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Nhớ mật khẩu!
-                            </label>
-                            <a href="#" class="forgot-password pull-right">Quên mật khẩu?</a>
+                        <div class="form-group">
+                            <label class="info-title" for="exampleInputEmail1">Số điện thoại <span>*</span></label>
+                            <input type="text" name="phonenumber" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
                         </div>
-                        <p style="color:red">@TempData["error"]</p>
-                        <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Đăng nhập</button>
-                        
-                        <a href="~/Login/Login" class="btn-upper btn btn-primary checkout-page-button dky">Đăng ký</a>
+                        <div class="form-group">
+                            <label class="info-title" for="exampleInputEmail1">Mật khẩu <span>*</span></label>
+                            <input type="password" name="pass" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" for="exampleInputEmail1">Nhập lại mật khẩu <span>*</span></label>
+                            <input type="password" name="pass1" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
+                        </div>
+                        <p style="color:red">@TempData["errorr"]</p>
+
+                        <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Đăng kí</button>
+                        <a href="~/Login/index" class="btn-upper btn btn-primary checkout-page-button dky">Đăng nhập</a>
                     </form>
                 </div>
                 <!-- Sign-in -->
                 <!-- create a new account -->
-                
                 <!-- create a new account -->
             </div><!-- /.row -->
         </div><!-- /.sigin-in-->
@@ -135,21 +132,24 @@
 
     .col-md-6 {
         width: 80%;
+        margin-left:80px;
     }
+
     .col-md-6.col-sm-6.sign-in {
-    width: 80%;
-    margin-left:70px;
-    }
+            width: 80%;
+            margin-left: 70px;
+        }
+
     a.twitter-sign-in {
-        float:right;
+        float: right;
     }
+
     button.btn-upper.btn.btn-primary.checkout-page-button {
-    margin-left: 70px;
-    
-}
+        margin-left: 70px;
+    }
+
     a.btn-upper.btn.btn-primary.checkout-page-button.dky {
-    float:right;
-    margin-right:70px;
-    
-}
+        float: right;
+        margin-right: 70px;
+    }
 </style>

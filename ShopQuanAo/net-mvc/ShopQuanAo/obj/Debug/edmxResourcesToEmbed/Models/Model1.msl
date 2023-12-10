@@ -65,11 +65,42 @@
     <EntitySetMapping Name="User">
       <EntityTypeMapping TypeName="SHOPAOQUAN.User">
         <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="name_roles" ColumnName="name_roles" />
+          <ScalarProperty Name="roles" ColumnName="roles" />
           <ScalarProperty Name="id_user" ColumnName="id_user" />
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="name_user" ColumnName="name_user" />
           <ScalarProperty Name="phonenumber" ColumnName="phonenumber" />
           <ScalarProperty Name="pass" ColumnName="pass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="SHOPAOQUAN.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="SHOPAOQUAN.roles">
+        <MappingFragment StoreEntitySet="roles">
+          <ScalarProperty Name="name_role" ColumnName="name_role" />
+          <ScalarProperty Name="id_role" ColumnName="id_role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="SHOPAOQUAN.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="phonenumber" ColumnName="phonenumber" />
+          <ScalarProperty Name="name_user" ColumnName="name_user" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
