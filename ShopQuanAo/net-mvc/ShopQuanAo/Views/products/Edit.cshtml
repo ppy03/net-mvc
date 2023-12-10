@@ -17,15 +17,12 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.stt, "STT", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.id_product, "ID sản phẩm", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.stt, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.stt, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.id_product, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.id_product, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        @Html.HiddenFor(model => model.id_product)
-
         <div class="form-group">
             @Html.LabelFor(model => model.name_product, "Tên sản phẩm", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -35,15 +32,32 @@
         </div>
 
         <div class="form-group">
+
             @Html.LabelFor(model => model.images, "Hình ảnh", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <img src="@Url.Content("~/assets/images/products/" + Model.images)" alt="Image" class="product-image">
-
+                <img id="id-img" src="@Url.Content("~/assets/images/products/" + Model.images)" alt="Image" class="product-image" style="width: 320px; height:320px;">
+                <input type="file" name="images" class="form-control" onchange="updateImage()" required />
             </div>
+            <script>
+
+                function updateImage() {
+                    var fileInput = document.querySelector("input[name='images" + "']");
+                    var img = document.querySelector("#id-img");
+                    if (fileInput.files && fileInput.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            img.src = e.target.result;
+                        };
+                        reader.readAsDataURL(fileInput.files[0]);
+                    }
+                }
+            </script>
+
         </div>
 
+
         <div class="form-group">
-            @Html.LabelFor(model => model.price_new, "Gía mới", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.price_new, "Giá mới", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.price_new, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.price_new, "", new { @class = "text-danger" })
@@ -51,7 +65,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.price_old, "Gía cũ", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.price_old, "Giá cũ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.price_old, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.price_old, "", new { @class = "text-danger" })
@@ -173,6 +187,7 @@
     {
         margin-bottom: 10px;
     }
+
     product-image {
         width: 100%;
         max-height: 200px;

@@ -18,7 +18,7 @@
         <table class="table">
             <thead>
                 <tr class="center">
-                    <th>STT</th>
+                    <th>ID sản phẩm</th>
                     <th>Tên sản phẩm</th>
                     <th>Ảnh</th>
                     <th>Giá</th>
@@ -33,7 +33,7 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@item.stt</td>
+                        <td>@item.id_product</td>
                         <td>@item.name_product</td>
                         <td><img src="~/assets/images/products/@item.images" alt="Image" class="product-image"></td>
                         <td>@item.price_new</td>

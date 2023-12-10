@@ -112,7 +112,7 @@
                         <!-- /.contact-row -->
                         <!-- ============================================================= SEARCH AREA ============================================================= -->
                         <div class="search-area">
-                          
+
                             <form>
                                 <div class="control-group">
                                     @*<ul class="categories-filter animate-dropdown">
@@ -151,16 +151,16 @@
                                         </ul>*@
                                     <ul class="categories-filter animate-dropdown">
                                         <li class="dropdown">
-                                            
-                                                <a class="dropdown-toggle dropdown-toggles"  data-toggle="dropdown" href="#">Danh mục<b class="caret"></b></a>
-                                                <ul class="dropdown-menu" role="menu">
-                                                    @foreach (var name in ViewBag.Categories)
-                                                    {
-                                                        <li role="presentation">
-                                                            <a role="menuitem" tabindex="-1" data-category="@name.cate_name" href="#" class="category-items category-item">- @name.cate_name</a>
-                                                        </li>
-                                                    }   
-                                                    </ul>
+
+                                            <a class="dropdown-toggle dropdown-toggles" data-toggle="dropdown" href="#">Danh mục<b class="caret"></b></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                @foreach (var name in ViewBag.Categories)
+                                                {
+                                                    <li role="presentation">
+                                                        <a role="menuitem" tabindex="-1" data-category="@name.cate_name" href="#" class="category-items category-item">- @name.cate_name</a>
+                                                    </li>
+                                                }
+                                            </ul>
 
 
                                         </li>
@@ -170,12 +170,12 @@
                                     <script>
                                         $(document).ready(function () {
                                             $('.category-items').on('click', function (e) {
-                                                            e.preventDefault(); // Prevent the default behavior of the anchor tag
+                                                e.preventDefault(); // Prevent the default behavior of the anchor tag
 
-                                                            var categoryName = $(this).data('category');
+                                                var categoryName = $(this).data('category');
                                                 $('.dropdown-toggles').text(categoryName);
-                                                        });
-                                                    });
+                                            });
+                                        });
                                     </script>
                                     <input class="search-field" placeholder="Nhập từ khoá tìm kiếm...">
                                     <a class="search-button" href="#"></a>
@@ -515,6 +515,7 @@
     <script src="~/assets\js\scripts.js"></script>
     <script src="~/assets/js/countdown.js"></script>
     <script src="~/assets/js/decr-incr.js"></script>
+    @RenderSection("scripts", required: false)
 
 </body>
 </html>
