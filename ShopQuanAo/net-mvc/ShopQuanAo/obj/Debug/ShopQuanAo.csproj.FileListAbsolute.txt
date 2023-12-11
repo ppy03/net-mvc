@@ -662,3 +662,37 @@ D:\demo asp.net mvc\Thư mục mới\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\obj\
 D:\demo asp.net mvc\Thư mục mới\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\obj\Debug\ShopQuanAo.csproj.CopyComplete
 D:\demo asp.net mvc\Thư mục mới\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\obj\Debug\ShopQuanAo.dll
 D:\demo asp.net mvc\Thư mục mới\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\obj\Debug\ShopQuanAo.pdb
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\ShopQuanAo.dll.config
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\ShopQuanAo.dll
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\ShopQuanAo.pdb
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\Antlr3.Runtime.dll
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\EntityFramework.dll
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\EntityFramework.SqlServer.dll
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\Newtonsoft.Json.dll
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\System.Web.Helpers.dll
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\System.Web.Mvc.dll
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\System.Web.Optimization.dll
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\System.Web.Razor.dll
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\System.Web.WebPages.Deployment.dll
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\System.Web.WebPages.dll
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\System.Web.WebPages.Razor.dll
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\WebGrease.dll
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\EntityFramework.xml
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\EntityFramework.SqlServer.xml
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\System.Web.Helpers.xml
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\System.Web.Mvc.xml
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\System.Web.Optimization.xml
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\System.Web.Razor.xml
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\System.Web.WebPages.xml
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\System.Web.WebPages.Deployment.xml
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\System.Web.WebPages.Razor.xml
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\Newtonsoft.Json.xml
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\Antlr3.Runtime.pdb
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\obj\Debug\ShopQuanAo.csprojAssemblyReference.cache
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\obj\Debug\ShopQuanAo.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\obj\Debug\ShopQuanAo.csproj.CopyComplete
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\obj\Debug\ShopQuanAo.dll
+C:\Users\USER\Desktop\DOCUMENT\nam3k1\c#\net-mvc\ShopQuanAo\net-mvc\ShopQuanAo\obj\Debug\ShopQuanAo.pdb

@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using ShopQuanAo.Models;
 
-namespace ShopQuanAo.Controllers
+namespace ShopQuanAo.Areas.admin.Controllers
 {
     public class UsersController : Controller
     {

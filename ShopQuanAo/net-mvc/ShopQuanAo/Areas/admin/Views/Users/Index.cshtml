@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ShopQuanAo.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_LayoutPage.cshtml";
+}
+
+<div class="container">
+    
+    <h2>QUẢN LÝ TÀI KHOẢN</h2>
+    <div class="create-button-container">
+        @Html.ActionLink("Tạo mới", "Create", null, new { @class = "create-button" })
+    </div>
+
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr class="center">
+                    <th>Email</th>
+                    <th>Tên đăng nhập</th>
+                    <th>Số điện thoại</th>
+                    <th>Mật khẩu</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.email</td>
+                        <td>@item.name_user</td>
+                        <td>@item.phonenumber</td>
+                        <td>@item.pass</td>
+                        <td>
+                            <a href="@Url.Action("Edit", new { id = item.id_user })" class="action-link"><i class="fas fa-edit"></i></a>
+                            <a href="@Url.Action("Details", new { id = item.id_user })" class="action-link"><i class="fas fa-info-circle"></i></a>
+                            <a href="@Url.Action("Delete", new { id = item.id_user })" class="action-link"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

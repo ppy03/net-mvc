@@ -100,7 +100,7 @@ namespace ShopQuanAo.Controllers
                     // Người dùng hợp lệ, thực hiện các thao tác cần thiết
                     // Ví dụ: lưu thông tin người dùng vào Session và chuyển hướng
                     Session["LoggedInUser"] = user.name_user;
-                    return RedirectToAction("Index", "products");
+                    return RedirectToAction("Index", "products", new { Area = "admin" });
                 }               
                 else
                 {

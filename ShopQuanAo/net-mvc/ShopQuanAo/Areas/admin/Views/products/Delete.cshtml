@@ -1,34 +1,55 @@
-﻿@model ShopQuanAo.Models.User
-
+﻿
+@model ShopQuanAo.Models.product
 @{
     ViewBag.Title = "Delete";
-    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    Layout = "~/Areas/admin/Views/Shared/_LayoutPage.cshtml";
 }
 <h2>XÓA</h2>
-<h3>Bạn có chắc muốn xóa tài khoản này?</h3>
+<h3>Bạn có chắc muốn xóa sản phẩm này?</h3>
 <div>
     <hr />
     <table>
+      
         <tr>
-            <th>Property</th>
-            <th>Value</th>
+            <td>ID sản phẩm</td>
+            <td>@Html.DisplayFor(model => model.id_product)</td>
         </tr>
         <tr>
-            <td>Email</td>
-            <td>@Html.DisplayFor(model => model.email)</td>
+            <td>Tên sản phẩm</td>
+            <td>@Html.DisplayFor(model => model.name_product)</td>
         </tr>
         <tr>
-            <td>Tên Đăng nhập</td>
-            <td>@Html.DisplayFor(model => model.name_user)</td>
+            <td>Hình ảnh</td>
+            <td>
+
+                <img src="~/assets/images/products/@Model.images" alt="Image" class="product-image">
+            </td>
         </tr>
-        <td>Số điện thoại</td>
-        <td>@Html.DisplayFor(model => model.phonenumber)</td>
+        <td>Gía cũ</td>
+        <td>@Html.DisplayFor(model => model.price_old)</td>
         </tr>
         <tr>
-            <td>Mật khẩu</td>
-            <td>@Html.DisplayFor(model => model.pass)</td>
+            <td>Gía mới</td>
+            <td>@Html.DisplayFor(model => model.price_new)</td>
+        </tr>
+        <tr>
+            <td>Mô tả</td>
+            <td>@Html.DisplayFor(model => model.describe)</td>
+        </tr>
+        <tr>
+            <td>Số lượng</td>
+            <td>@Html.DisplayFor(model => model.quantity)</td>
+        </tr>
+        <tr>
+            <td>Thương hiệu</td>
+            <td>@Html.DisplayFor(model => model.Brand.brand_name)</td>
+        </tr>
+        <tr>
+            <td>Thể loại</td>
+            <td>@Html.DisplayFor(model => model.subCategory.name_subcate)</td>
         </tr>
     </table>
+
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -44,7 +65,7 @@
         font-family: 'Arial', sans-serif;
         background-color: #f8f8f8;
         color: #333;
-        padding: 20px;
+
     }
 
     h2 {

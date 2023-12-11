@@ -3,15 +3,13 @@
 @model IEnumerable<ShopQuanAo.Models.product>
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    Layout = "~/Areas/admin/Views/Shared/_LayoutPage.cshtml";
 }
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <div class="container">
-    <div class="create-button-container">
-        @Html.ActionLink("Quản lý Users ", "Index", "Users")
-    </div>
+    
     <h2>QUẢN LÝ SẢN PHẨM</h2>
 
     <div class="create-button-container">

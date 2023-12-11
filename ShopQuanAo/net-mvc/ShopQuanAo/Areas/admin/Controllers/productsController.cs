@@ -10,8 +10,9 @@ using System.Web.Mvc;
 using System.Xml;
 using ShopQuanAo.Models;
 
-namespace ShopQuanAo.Controllers
+namespace ShopQuanAo.Areas.admin.Controllers
 {
+    
     public class productsController : Controller
     {
         private SHOPAOQUANEntities1 db = new SHOPAOQUANEntities1();
