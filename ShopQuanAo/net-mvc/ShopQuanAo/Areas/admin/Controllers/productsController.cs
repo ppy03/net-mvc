@@ -12,7 +12,7 @@ using ShopQuanAo.Models;
 
 namespace ShopQuanAo.Areas.admin.Controllers
 {
-    
+
     public class productsController : Controller
     {
         private SHOPAOQUANEntities1 db = new SHOPAOQUANEntities1();
@@ -80,7 +80,7 @@ namespace ShopQuanAo.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "stt,id_product,name_product,images,price_new,price_old,describe,quantity,id_subcate,id_brand")] product product)
+        public ActionResult Create([Bind(Include = "stt,id_product,name_product,price_new,price_old,describe,quantity,id_subcate,id_brand")] product product, HttpPostedFileBase imageInput)
         {
             List<Category> danhmuccha = db.Category.ToList();
             List<subCategory> danhmuccon = db.subCategory.ToList();
@@ -91,11 +91,23 @@ namespace ShopQuanAo.Areas.admin.Controllers
             ViewBag.subCategories = danhmuccon;
             ViewBag.sales = sale;
             ViewBag.brands = brand;
-
             if (ModelState.IsValid)
             {
+                // Xử lý file ảnh
+                if (imageInput != null && imageInput.ContentLength > 0)
+                {
+                    string fileName = Path.GetFileName(imageInput.FileName);
+                    string path = Path.Combine(Server.MapPath("~/assets/images/products/"), fileName);
+                    imageInput.SaveAs(path);
+
+                    // Lưu tên file vào thuộc tính 'images' của sản phẩm
+                    product.images = fileName;
+                }
+
+                // Lưu sản phẩm vào cơ sở dữ liệu
                 db.product.Add(product);
                 db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
 
@@ -103,6 +115,7 @@ namespace ShopQuanAo.Areas.admin.Controllers
             ViewBag.id_subcate = new SelectList(db.subCategory, "id_subcate", "name_subcate", product.id_subcate);
             return View(product);
         }
+
 
         // GET: products/Edit/5
         public ActionResult Edit(string id)
