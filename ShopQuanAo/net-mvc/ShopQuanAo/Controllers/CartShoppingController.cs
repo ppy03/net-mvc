@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace ShopQuanAo.Controllers
@@ -22,18 +23,30 @@ namespace ShopQuanAo.Controllers
             return cart;
         }
 
-        public ActionResult AddToCart(string MASANPHAM , int quantity, string size, String type="Normal"  )
+        public ActionResult AddToCart(string MASANPHAM, int quantity, string size, string type = "Normal")
         {
-            
-            var pro = db.product.SingleOrDefault(s => s.id_product == MASANPHAM);
-            if(pro != null)
+            string userName = Session["LoggedInUser"] as string;
+            // Kiểm tra xem user đã đăng nhập
+            if (Session["LoggedInUser"] != null)
             {
-                GetCart().Add(pro,quantity,size);
+                using (var db = new SHOPAOQUANEntities1())
+                {
+                    var pro = db.product.SingleOrDefault(s => s.id_product == MASANPHAM);
+                    var user = db.User.FirstOrDefault(u => u.name_user == userName);
+
+                    // Kiểm tra xem sản phẩm và user có giá trị hay k
+                    if (pro != null && user != null)
+                    {
+                        GetCart().Add(pro, quantity, size);
+                        return RedirectToAction("ShowToCart", "CartShopping");
+                    }
+                }
             }
 
-            
-            return RedirectToAction("ShowToCart", "CartShopping");
+            // Nếu ch đăng nhập trả về trang đăng nhập
+            return RedirectToAction("Index", "Login");
         }
+
         public ActionResult ShowToCart()
         {
             List<Category> danhmuccha = db.Category.ToList();

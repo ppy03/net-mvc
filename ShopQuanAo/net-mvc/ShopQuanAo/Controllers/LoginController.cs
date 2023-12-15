@@ -31,7 +31,6 @@ namespace ShopQuanAo.Controllers
             List<Category> danhmuccha = db.Category.ToList();
             List<subCategory> danhmuccon = db.subCategory.ToList();
             List<User> users = db.User.ToList();
-
             ViewBag.Categories = danhmuccha;
             ViewBag.subCategories = danhmuccon;
             ViewBag.Users = users;
