@@ -1,6 +1,4 @@
-﻿
-
-@model IEnumerable<ShopQuanAo.Models.product>
+﻿@model IEnumerable<ShopQuanAo.Models.product>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/admin/Views/Shared/_LayoutPage.cshtml";
@@ -13,7 +11,7 @@
     <h2>QUẢN LÝ SẢN PHẨM</h2>
 
     <div class="create-button-container">
-        @Html.ActionLink("Create New", "Create", null, new { @class = "create-button" })
+        @Html.ActionLink("New Product", "Create", null, new { @class = "create-button" })
     </div>
 
     <div class="table-container">
@@ -43,7 +41,7 @@
                         <td>@item.quantity</td>
                         <td>@item.Brand.brand_name</td>
                         <td class="category-column">@item.subCategory.name_subcate</td>
-                        <td>
+                        <td class="icon-td" style="padding:0px;">
                             <a href="@Url.Action("Edit", new { id = item.id_product })" class="action-link"><i class="fas fa-edit"></i></a>
                             <a href="@Url.Action("Details", new { id = item.id_product })" class="action-link"><i class="fas fa-info-circle"></i></a>
                             <a href="@Url.Action("Delete", new { id = item.id_product })" class="action-link"><i class="fas fa-trash-alt"></i></a>
@@ -89,7 +87,7 @@
 
         .table th,
         .table td {
-            padding: 8px;
+            padding: 0px;
             text-align: left;
             border-bottom: 1px solid #ddd;
             vertical-align: middle;
@@ -133,5 +131,12 @@
     .table td.category-column {
         width: 150px; 
     }
+
+    .icon-td{
+    padding: 0px;
+    width: 108px;
+    padding:15px;
+}
+    
 </style>
 
