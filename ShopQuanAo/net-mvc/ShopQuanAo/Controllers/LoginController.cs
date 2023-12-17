@@ -118,7 +118,7 @@ namespace ShopQuanAo.Controllers
             Session["LoggedInUser"] = null;
             //xoa session trong au
             FormsAuthentication.SignOut();
-            return RedirectToAction("Home", "Home");  
+            return RedirectToAction("Index", "Login");  
         }
 
     }
